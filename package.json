@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-places-autocomplete": "0.0.0-semantically-released",
     "react-scripts": "1.0.10"
   },
   "scripts": {
