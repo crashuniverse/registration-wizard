@@ -12,7 +12,6 @@ class Location extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.address);
     this.props.onSubmit(this.state.address);
   }
 

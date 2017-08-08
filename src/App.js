@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Stage from './components/stage';
 import Location from './components/location';
+import User from './components/user';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends Component {
       phone: ''
     }
     this.onChooseLocation = this.onChooseLocation.bind(this);
+    this.onChooseUserDetails = this.onChooseUserDetails.bind(this);
   }
 
   onChooseLocation(location) {
@@ -21,8 +23,15 @@ class App extends Component {
     });
   }
 
+  onChooseUserDetails(email, phone) {
+    this.setState({
+      email,
+      phone
+    });
+  }
+
   render() {
-    const { location } = this.state;
+    const { location, email, phone } = this.state;
     return (
       <div className="App">
         <div className="App-header">
@@ -32,6 +41,10 @@ class App extends Component {
         <Location
           location={location}
           onSubmit={this.onChooseLocation} />
+        <User
+          email={email}
+          phone={phone}
+          onSubmit={this.onChooseUserDetails} />
       </div>
     );
   }
