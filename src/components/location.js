@@ -23,9 +23,9 @@ class Location extends Component {
 
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <div>Enter location</div>
+        <label>Enter location</label>
         <PlacesAutocomplete inputProps={inputProps} />
-        <button type="submit">Submit</button>
+        <button type="submit">Choose Location</button>
       </form>
     );
   }

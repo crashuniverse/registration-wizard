@@ -9,12 +9,14 @@ class Summary extends Component {
   render() {
     const { location, email, phone } = this.props;
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <div>You have chosen:</div>
+      <form onSubmit={this.handleFormSubmit} className="summary">
+        <strong>You have chosen:</strong>
+        <br/><br/>
         <div>Location: {location}</div>
         <div>Email: {email}</div>
         <div>Phone: {phone}</div>
-        <button type="submit">Submit</button>
+        <br/>
+        <button type="submit">Save All Details</button>
       </form>
     );
   }

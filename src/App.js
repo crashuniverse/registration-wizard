@@ -57,33 +57,42 @@ class App extends Component {
         <div className="App-header">
           <h2>User Registration Wizard</h2>
         </div>
-        <Stage
-          stage={stage} />
-        {
-          stage === 1 &&
-          <Location
-            location={location}
-            onSubmit={this.onChooseLocation} />
-        }
-        {
-          stage === 2 &&
-          <User
-            email={email}
-            phone={phone}
-            onSubmit={this.onChooseUserDetails} />
-        }
-        {
-          stage === 3 &&
-          <Summary
-            location={location}
-            email={email}
-            phone={phone}
-            onSubmit={this.onConfirm} />
-        }
-        {
-          stage === 4 &&
-          <div>User details submitted successfully.</div>
-        }
+        <div className="container">
+          {
+            stage <= 3 &&
+            <Stage
+              stage={stage} />
+          }
+          {
+            stage === 1 &&
+            <Location
+              location={location}
+              onSubmit={this.onChooseLocation} />
+          }
+          {
+            stage === 2 &&
+            <User
+              email={email}
+              phone={phone}
+              onSubmit={this.onChooseUserDetails} />
+          }
+          {
+            stage === 3 &&
+            <Summary
+              location={location}
+              email={email}
+              phone={phone}
+              onSubmit={this.onConfirm} />
+          }
+          {
+            stage === 4 &&
+            <div>
+              <br/><br/><br/><br/>
+              <span role="img" aria-label="complete">☑️ </span>
+              User details submitted successfully.
+            </div>
+          }
+        </div>
       </div>
     );
   }

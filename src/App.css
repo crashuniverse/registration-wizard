@@ -1,13 +1,56 @@
 .App {
-  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .App-header {
   background-color: #222;
   padding: 5px;
   color: white;
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.stage {
+  text-align: center;
+  padding: 20px 0 40px;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+button {
+  display: block;
+  margin: 20px 0 10px;
+  font-size: 1em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1em;
+  padding: 10px 5px;
+  outline: none;
+  width: 320px;
+}
+
+input:focus {
+  outline: solid 1px #999999;
+}
+
+::placeholder {
+  color: #cccccc;
+}
+
+.summary {
+  font-size: 1em;
 }

@@ -22,7 +22,7 @@ class User extends Component {
   render() {
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <div>Email</div>
+        <label>Email</label>
         <div>
           <input type="email"
             placeholder="john.doe@example.com"
@@ -30,7 +30,7 @@ class User extends Component {
             value={this.state.email}
             onChange={this.onChangeEmail} />
         </div>
-        <div>Mobile Number</div>
+        <label>Mobile Number</label>
         <div>
           <input type="tel"
             placeholder="+44 1234 S678"
@@ -38,7 +38,7 @@ class User extends Component {
             value={this.state.phone}
             onChange={this.onChangePhone} />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit User Details</button>
       </form>
     );
   }
