@@ -38,6 +38,7 @@ class User extends Component {
             value={this.state.phone}
             onChange={this.onChangePhone} />
         </div>
+        <button onClick={this.props.onGoBack}>Go Back</button>
         <button type="submit">Submit User Details</button>
       </form>
     );

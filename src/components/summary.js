@@ -16,6 +16,7 @@ class Summary extends Component {
         <div>Email: {email}</div>
         <div>Phone: {phone}</div>
         <br/>
+        <button onClick={this.props.onGoBack}>Go Back</button>
         <button type="submit">Save All Details</button>
       </form>
     );

@@ -17,6 +17,7 @@ class App extends Component {
     }
     this.onChooseLocation = this.onChooseLocation.bind(this);
     this.onChooseUserDetails = this.onChooseUserDetails.bind(this);
+    this.onGoBack = this.onGoBack.bind(this);
     this.onConfirm = this.onConfirm.bind(this);
   }
 
@@ -32,6 +33,12 @@ class App extends Component {
       stage: 3,
       email,
       phone
+    });
+  }
+
+  onGoBack() {
+    this.setState({
+      stage: this.state.stage - 1
     });
   }
 
@@ -74,6 +81,7 @@ class App extends Component {
             <User
               email={email}
               phone={phone}
+              onGoBack={this.onGoBack}
               onSubmit={this.onChooseUserDetails} />
           }
           {
@@ -82,6 +90,7 @@ class App extends Component {
               location={location}
               email={email}
               phone={phone}
+              onGoBack={this.onGoBack}
               onSubmit={this.onConfirm} />
           }
           {

@@ -27,8 +27,7 @@ label {
 }
 
 button {
-  display: block;
-  margin: 20px 0 10px;
+  margin: 20px 10px 10px 0;
   font-size: 1em;
   padding: 5px;
   cursor: pointer;
