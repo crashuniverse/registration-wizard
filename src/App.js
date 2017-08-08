@@ -3,6 +3,7 @@ import './App.css';
 import Stage from './components/stage';
 import Location from './components/location';
 import User from './components/user';
+import Summary from './components/summary';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
     }
     this.onChooseLocation = this.onChooseLocation.bind(this);
     this.onChooseUserDetails = this.onChooseUserDetails.bind(this);
+    this.onConfirm = this.onConfirm.bind(this);
   }
 
   onChooseLocation(location) {
@@ -28,6 +30,17 @@ class App extends Component {
       email,
       phone
     });
+  }
+
+  onConfirm() {
+    const { location, email, phone } = this.state;
+    const payload = Object.assign({}, {
+      location,
+      email,
+      phone
+    });
+    console.log(payload);
+    // make a post call to an unknown destination
   }
 
   render() {
@@ -45,6 +58,11 @@ class App extends Component {
           email={email}
           phone={phone}
           onSubmit={this.onChooseUserDetails} />
+        <Summary
+          location={location}
+          email={email}
+          phone={phone}
+          onSubmit={this.onConfirm} />
       </div>
     );
   }
