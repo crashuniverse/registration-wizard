@@ -4,6 +4,7 @@ import Stage from './components/stage';
 import Location from './components/location';
 import User from './components/user';
 import Summary from './components/summary';
+import { post } from './utilities/api';
 
 class App extends Component {
   constructor(props) {
@@ -41,8 +42,12 @@ class App extends Component {
       email,
       phone
     });
-    console.log(payload);
-    // make a post call to an unknown destination
+    post(payload)
+    .then(() => {
+      this.setState({
+        stage: 4
+      });
+    });
   }
 
   render() {
@@ -74,6 +79,10 @@ class App extends Component {
             email={email}
             phone={phone}
             onSubmit={this.onConfirm} />
+        }
+        {
+          stage === 4 &&
+          <div>User details submitted successfully.</div>
         }
       </div>
     );
