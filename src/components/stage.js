@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 class Stage extends Component {
   render() {
+    const { stage } = this.props;
     return (
       <div className="stage">
-        Stage 1/3
+        <span>Stage </span>
+        <span>{`${stage}/3`}</span>
       </div>
     );
   }

@@ -21,12 +21,14 @@ class App extends Component {
 
   onChooseLocation(location) {
     this.setState({
+      stage: 2,
       location
     });
   }
 
   onChooseUserDetails(email, phone) {
     this.setState({
+      stage: 3,
       email,
       phone
     });
@@ -44,25 +46,35 @@ class App extends Component {
   }
 
   render() {
-    const { location, email, phone } = this.state;
+    const { stage, location, email, phone } = this.state;
     return (
       <div className="App">
         <div className="App-header">
           <h2>User Registration Wizard</h2>
         </div>
-        <Stage />
-        <Location
-          location={location}
-          onSubmit={this.onChooseLocation} />
-        <User
-          email={email}
-          phone={phone}
-          onSubmit={this.onChooseUserDetails} />
-        <Summary
-          location={location}
-          email={email}
-          phone={phone}
-          onSubmit={this.onConfirm} />
+        <Stage
+          stage={stage} />
+        {
+          stage === 1 &&
+          <Location
+            location={location}
+            onSubmit={this.onChooseLocation} />
+        }
+        {
+          stage === 2 &&
+          <User
+            email={email}
+            phone={phone}
+            onSubmit={this.onChooseUserDetails} />
+        }
+        {
+          stage === 3 &&
+          <Summary
+            location={location}
+            email={email}
+            phone={phone}
+            onSubmit={this.onConfirm} />
+        }
       </div>
     );
   }
