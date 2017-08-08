@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+import Stage from './components/stage';
+import Location from './components/location';
 
 class App extends Component {
+  state = {
+    stage: 1,
+    location: '',
+    email: '',
+    phone: ''
+  }
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <h2>User Registration Wizard</h2>
         </div>
-        <p className="App-intro">
-          User should complete registration in 3 steps.
-        </p>
+        <Stage />
+        <Location />
       </div>
     );
   }
